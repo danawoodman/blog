@@ -4,7 +4,7 @@
   "description": "Dana Woodman's blog",
   "main": "index.js",
   "scripts": {
-    "build": "echo 'Build blog...'",
+    "build": "mkdir -p dist && echo 'Hello World' > dist/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
