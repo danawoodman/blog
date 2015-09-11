@@ -1,0 +1,20 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Dana Woodman's blog",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Build blog...'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danawoodman/blog.git"
+  },
+  "author": "Dana Woodman <dana@danawoodman.com> (http://danawoodman.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danawoodman/blog/issues"
+  },
+  "homepage": "https://github.com/danawoodman/blog#readme"
+}
