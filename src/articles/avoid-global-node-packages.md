@@ -1,7 +1,8 @@
 ---
-title: "Avoid global Node.js packages"
-date: "2015-02-13"
+title: Avoid global Node.js packages
+date: 2015-02-13
 ---
+
 Often in Node.js projects, we're required to install global modules to run things like tests, migrations and other development processes.
 
 This has never sat right with me because global installs aren't explicit ([with minor exception](http://stackoverflow.com/a/10813149/529829)), which can lead to confusion and frustration when things don't work right.

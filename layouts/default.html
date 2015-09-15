@@ -1,0 +1,31 @@
+{{> header }}
+
+<article class='article'>
+  <header class='article-header'>
+    <div class='container'>
+      <time class='article-date'>
+        {{ date }}
+      </time>
+      <h1 class='article-heading'>{{ title }}</h1>
+      <address class='article-author'>By <a rel='author' href='/'>Dana Woodman</a></address>
+    </div>
+  </header>
+  <section class='article-content'>
+    <div class='container'>
+      {{{ contents }}}
+    </div>
+  </section>
+</article>
+
+<p>
+  Next: <a href="{{ next.path }}">{{ next.title }}</a>
+</p>
+
+{{{ next }}}
+
+<p>
+  Previous: <a href="{{ previous.path }}">{{ previous.title }}</a>
+</p>
+
+
+{{> footer }}
