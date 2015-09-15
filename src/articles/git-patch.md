@@ -19,4 +19,4 @@ Then to apply the patch, run:
 patch -p1 file.patch
 ```
 
-Where `file.patch` is the patch file created from the above command. This applies the patch with any sort of meta information like author, date, etc... so it appears almost like it was cherry picked. 
+Where `file.patch` is the patch file created from the above command. This applies the patch with any sort of meta information like author, date, etc... so it appears almost like it was cherry picked.
