@@ -4,8 +4,20 @@
     "description": "Thoughts on code"
   },
   "plugins": {
+    "metalsmith-drafts": true,
     "metalsmith-clean-css": {
       "files": "src/**/*.css"
+    },
+    "metalsmith-static": {
+      "src": "public",
+      "dest": "."
+    },
+    "metalsmith-collections": {
+      "articles": {
+        "pattern": "articles/**/*.md",
+        "sortBy": "date",
+        "reverse": true
+      }
     },
     "metalsmith-date-formatter": {
       "dates": [
@@ -15,33 +27,18 @@
         }
       ]
     },
-    "metalsmith-collections": {
-      "articles": {
-        "pattern": "articles/**/*.md",
-        "sortBy": "date",
-        "reverse": true
-      }
-    },
-    "metalsmith-in-place": {
-      "engine": "handlebars",
-      "partials": "partials",
-      "pattern": "**/*.md"
-    },
     "metalsmith-markdown": {
       "smartypants": true,
       "gfm": true,
       "tables": true
     },
-    "metalsmith-static": {
-      "src": "public",
-      "dest": "."
-    },
+    "metalsmith-permalinks": true,
+    "./lib/url.js": true,
     "metalsmith-layouts": {
       "default": "default.html",
       "engine": "handlebars",
       "partials": "partials",
       "pattern": "**/*.html"
-    },
-    "metalsmith-permalinks": true
+    }
   }
 }

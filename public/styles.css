@@ -1,3 +1,6 @@
+/*---------------------------------------------------
+ * BASE STYLES
+ --------------------------------------------------*/
 body {
   font-family: 'Open Sans', Helvetica, sans-serif;
   font-weight: 300;
@@ -19,7 +22,9 @@ a:hover {
   text-decoration: none;
 }
 
-p, pre {
+li,
+p,
+pre {
   font-size: 1.25rem;
   line-height: 1.8;
   margin: 0 0 2rem 0;
@@ -52,9 +57,53 @@ pre {
 }
 
 
-.article {
+/*---------------------------------------------------
+ * AVATAR
+ --------------------------------------------------*/
 
+.avatar {
+  border-radius: 50%;
 }
+
+
+/*---------------------------------------------------
+ * ARTICLE LIST
+ --------------------------------------------------*/
+
+.article-list,
+.article-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.article-list {
+  margin: 2rem 0;
+}
+
+.article-item {
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.article-item-link {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.article-item-date {
+  color: #888;
+  font-size: 1rem;
+}
+
+
+/*---------------------------------------------------
+ * ARTICLE DETAIL
+ --------------------------------------------------*/
+
+.article {}
 
 .article-header {
   background: #06b9d8;
@@ -86,6 +135,39 @@ pre {
   text-transform: uppercase;
 }
 
-.article-content {
+.article-content {}
 
+
+/*---------------------------------------------------
+ * PAGE
+ --------------------------------------------------*/
+
+.page-header {
+  background: #06b9d8;
+  margin: 0 0 4rem 0;
+  padding: 4rem 0;
+}
+
+.page-header > .container {
+  text-align: center;
+}
+
+.page-avatar {
+  margin: 0 0 1rem 0;
+  padding: 0;
+  text-align: center;
+}
+
+.page-heading {
+  color: #fff;
+  font-size: 3rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.page-subheading {
+  color: #fff;
+  font-size: 1.25rem;
+  margin: 0.75rem 0 0 0;
+  padding: 0;
 }

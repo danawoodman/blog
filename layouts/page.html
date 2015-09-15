@@ -1,7 +1,13 @@
 {{> header }}
 
-<div class="container">
-  <h1>{{ title }}</h1>
+<header class='page-header'>
+  <div class='container'>
+    {{> avatar}}
+    <h1 class='page-heading'>{{ title }}</h1>
+  </div>
+</header>
+
+<div class='container'>
   {{{contents}}}
 </div>
 

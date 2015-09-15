@@ -3,6 +3,7 @@
 <article class='article'>
   <header class='article-header'>
     <div class='container'>
+      {{> avatar}}
       <time class='article-date'>
         {{ date }}
       </time>
@@ -18,13 +19,10 @@
 </article>
 
 <p>
-  Next: <a href="{{ next.path }}">{{ next.title }}</a>
+  Next: <a href='{{ next.path }}'>{{ next.title }}</a>
 </p>
-
-{{{ next }}}
-
 <p>
-  Previous: <a href="{{ previous.path }}">{{ previous.title }}</a>
+  Previous: <a href='{{ previous.path }}'>{{ previous.title }}</a>
 </p>
 
 
