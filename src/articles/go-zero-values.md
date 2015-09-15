@@ -1,6 +1,6 @@
 ---
-title: "Use zero values to your advantage in go"
-date: "2014-02-11"
+title: Use zero values to your advantage in go
+date: 2014-02-11
 tags: ["go"]
 ---
 In Go, when a value is initialized *without a initializer value it returns the "zero value" of that type*.

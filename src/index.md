@@ -1,8 +1,5 @@
 ---
 title: Dana Woodman
-layout: page.html
+layout: index.html
 ---
 
-Welcome to my home on the web!
-
-{{> list }}

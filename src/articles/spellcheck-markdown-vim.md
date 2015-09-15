@@ -1,6 +1,6 @@
 ---
 title: "Enable spellcheck for markdown files in vim"
-date: "2014-04-18"
+date: 2014-04-18
 tags: ["vim", "markdown"]
 ---
 

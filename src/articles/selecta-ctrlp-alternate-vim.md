@@ -1,6 +1,6 @@
 ---
-title: "Selecta as an alternate to Ctrlp in vim"
-date: "2014-05-03"
+title: Selecta as an alternate to Ctrlp in vim
+date: 2014-05-03
 tags: ["vim"]
 draft: true
 ---

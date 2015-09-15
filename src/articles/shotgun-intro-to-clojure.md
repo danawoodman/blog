@@ -1,6 +1,6 @@
 ---
-title: "Shotgun intro to clojure"
-date: "2014-05-14"
+title: Shotgun intro to clojure
+date: 2014-05-14
 draft: true
 ---
 

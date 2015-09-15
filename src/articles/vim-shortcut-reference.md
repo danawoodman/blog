@@ -1,6 +1,6 @@
 ---
-title: "My vim shortcut reference"
-date: "2014-05-01"
+title: My vim shortcut reference
+date: 2014-05-01
 draft: true
 ---
 

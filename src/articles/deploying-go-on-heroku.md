@@ -1,6 +1,6 @@
 ---
-title: "Deploying a go application on Heroku"
-date: "2013-12-09"
+title: Deploying a go application on Heroku
+date: 2013-12-09
 ---
 <iframe src="http://player.vimeo.com/video/93459202" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
