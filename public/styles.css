@@ -54,9 +54,14 @@ code {
   padding: 1rem 0 1rem 2rem;
 }
 
+
+/*---------------------------------------------------
+ * CONTAINER
+ --------------------------------------------------*/
+
 .container {
   margin: 0 auto;
-  max-width: 45rem;
+  max-width: 50rem;
   padding: 0 1.5rem;
   text-align: left;
 }
