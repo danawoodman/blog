@@ -24,6 +24,6 @@ Or, copy a local file to the remote machine:
 scp ~/cats.jpg user@example.com:~/
 ```
 
-You can specify and source and target directories that you have permissions to write or read from.
+You can specify any source and target directories that you have permissions to write or read from.
 
 `scp` is a simple and useful tool that should be part of any developers toolkit.
