@@ -9,8 +9,8 @@ This has never sat right with me because global installs aren't explicit ([with 
 
 Instead, I opt to use local references to node packages in my applications because:
 
-1. It keeps dependencies explicitly defined in your `package.json`
-2. It makes the application more portable because all dependencies are local (and can be committed to source control).
+1. It keeps dependencies explicitly defined in your `package.json`.
+2. It makes the application more portable because all dependencies are local.
 3. It doesn't require any documentation or setup for developers because everything they need to run the application is installed locally.
 
 For example, if we wanted to run a [Sequelize](http://sequelizejs.com/) migration, we could put the following in our `package.json`:
@@ -19,7 +19,7 @@ For example, if we wanted to run a [Sequelize](http://sequelizejs.com/) migratio
 {
   "name": "my-project",
   "scripts": {
-    "migrate": "./node_modules/sequelize-cli/bin/sequelize db:migrate"
+    "migrate": "sequelize db:migrate"
   },
   "dependencies": {
     "sequelize": "*",
@@ -29,3 +29,5 @@ For example, if we wanted to run a [Sequelize](http://sequelizejs.com/) migratio
 ```
 
 Now you can run `npm run migrate` to run migrations but without the need for global NPM packages but with the same convenience.
+
+*Extra credit: You can also pass additional parameters to npm scripts by using a double dash (`--`), eg `npm run test -- --watch`*

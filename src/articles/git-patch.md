@@ -7,8 +7,11 @@ Sometimes you need to create a patch from a commit in your git repository. I've 
 Here's how you do it:
 
 ```bash
-git format-patch -1 <sha> # for a specific commit SHA
-git format-patch -1 HEAD  # shortcut for the commit at the branch's HEAD
+# For a specific commit SHA:
+git format-patch -1 <sha>
+
+# Shortcut for the commit at the branch's HEAD:
+git format-patch -1 HEAD
 ```
 
 The `-1` flag says to only create a patch from the last commit. If you passed in, say `-3`, it would create a patch that contains the last 3 commits from `<sha>` on back in the history.
