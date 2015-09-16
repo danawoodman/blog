@@ -19,7 +19,7 @@ git push heroku master
 
 Here is the content of the `server.go` file:
 
-```go
+```
 package main
 
 import (
