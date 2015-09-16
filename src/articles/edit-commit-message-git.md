@@ -32,7 +32,7 @@ git rebase -i 932d7b8
 
 Now change the text in front of the commit you want to change to be `reword` and you'll be prompted to update the commit message:
 
-```git
+```
 reword e7fa3ea    Poorly worded commit here...
 pick   932d7b8    Update README
 ```
