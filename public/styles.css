@@ -50,6 +50,7 @@ code {
 .hljs {
   background: #fafafa;
   border-left: 0.5rem solid #06b9d8;
+  font-size: 0.85rem;
   padding: 1rem 0 1rem 2rem;
 }
 
