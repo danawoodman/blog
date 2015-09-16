@@ -57,6 +57,7 @@ pre {
 .container {
   margin: 0 auto;
   max-width: 45rem;
+  padding: 0 2rem;
   text-align: left;
 }
 
