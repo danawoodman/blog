@@ -2,9 +2,10 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "Dana Woodman's blog",
-  "main": "build.js",
+  "main": "bin/build",
   "scripts": {
-    "build": "metalsmith"
+    "build": "./bin/build",
+    "watch": "npm run build -- -w"
   },
   "repository": {
     "type": "git",
@@ -12,6 +13,7 @@
   },
   "author": "Dana Woodman <dana@danawoodman.com> (http://danawoodman.com/)",
   "license": "ISC",
+  "bin": "./bin/build",
   "bugs": {
     "url": "https://github.com/danawoodman/blog/issues"
   },
@@ -34,5 +36,15 @@
     "metalsmith-title": "0.0.1",
     "mkdirp": "^0.5.1",
     "sass": "^0.5.0"
+  },
+  "devDependencies": {
+    "chalk": "^1.1.1",
+    "commander": "^2.8.1",
+    "metalsmith-branch": "0.0.4",
+    "metalsmith-define": "^1.0.0",
+    "metalsmith-serve": "0.0.4",
+    "metalsmith-typography": "^0.1.1",
+    "metalsmith-watch": "^1.0.1",
+    "metalsmith-word-count": "0.0.4"
   }
 }

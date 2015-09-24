@@ -28,9 +28,6 @@ extension, doesn't really matter.
   <body>
     <script src="http://fb.me/react-0.12.2.min.js"></script>
     <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
-    
-    <!--
-    -->
     <script src="scripts.jsx" type="text/jsx"></script>
   </body>
 </html>

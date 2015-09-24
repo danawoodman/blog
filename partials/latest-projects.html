@@ -1,0 +1,9 @@
+<ul class='project-list'>
+{{#each collections.latestProjects}}
+  <li class='project-item'>
+    <a href="{{ path }}" class='project-item-link'>{{ title }}</a>
+    <br>
+    <time class="project-item-date">{{ date }}</time>
+  </li>
+{{/each}}
+</ul>
