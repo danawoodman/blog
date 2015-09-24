@@ -1,6 +1,7 @@
 ---
 title: Require local NPM packages in Node.js
 date: 2015-02-08
+tags: [node, javascript]
 ---
 NPM after version 2.0 has added the ability for developers to install local packages into their projects easily.
 

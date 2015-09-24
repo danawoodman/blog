@@ -1,6 +1,7 @@
 ---
 title: Shotgun intro to clojure
 date: 2014-05-14
+tags: [clojure]
 draft: true
 ---
 

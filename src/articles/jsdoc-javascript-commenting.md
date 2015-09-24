@@ -1,7 +1,7 @@
 ---
 title: Using jsdoc commenting in JavaScript
 date: 2014-05-02
-tags: ["javascript"]
+tags: [javascript, documentation]
 ---
 
 File this one under "note to self", but knowing how to properly comment your JavaScript is an important part of being a proficient developer.

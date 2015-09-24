@@ -1,6 +1,7 @@
 ---
 title: My vim shortcut reference
 date: 2014-05-01
+tags: [vim]
 draft: true
 ---
 

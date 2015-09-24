@@ -1,6 +1,7 @@
 <ul class='article-list'>
 {{#each collections.latestArticles}}
   <li class='article-item'>
+    {{> tags}}
     <a href="{{ path }}" class='article-item-link'>{{ title }}</a>
     <br>
     <time class="article-item-date">{{ date }}</time>

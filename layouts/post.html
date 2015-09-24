@@ -13,8 +13,9 @@
   </header>
   <section class='article-content'>
     <div class='container'>
+      {{> tags}}
       <p class='article-reading-time'>Reading time: {{ readingTime }}</p>
-      {{{ contents }}}
+      {{{contents}}}
       {{> navigation}}
     </div>
   </section>

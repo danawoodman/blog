@@ -1,6 +1,7 @@
 ---
 title: Use the "const" keyword for a quick FP win
 date: 2015-07-20
+tags: [javascript, fp]
 ---
 
 If you want a quick way to enforce some FP (Functional Programming) in your JavaScript code then use the `const` keyword instead of `var` and `let`.

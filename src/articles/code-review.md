@@ -1,6 +1,7 @@
 ---
 title: Reasons to adopt code review in your team
 date: 2014-06-10
+tags: [business, process]
 ---
 
 I've worked with enough teams to know that code review should be an essential part of any software team's worflow.

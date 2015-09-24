@@ -1,6 +1,7 @@
 ---
 title: Interactively add content in git
 date: 2014-03-02
+tags: [git]
 ---
 It's often handy to add changes you've made to your local branch in git in a more interactive fashion. Sometimes the changes you have make more sense in multiple commits than one catch all commit.
 

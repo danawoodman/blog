@@ -1,6 +1,7 @@
 ---
 title: Avoid global Node.js packages
 date: 2015-02-13
+tags: [node, javascript, tooling]
 ---
 
 Often in Node.js projects, we're required to install global modules to run things like tests, migrations and other development processes.

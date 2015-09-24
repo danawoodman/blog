@@ -1,6 +1,7 @@
 ---
 title: React "Hello World" Examples
 date: 2015-3-10
+tags: [javascript, react]
 ---
 Below are a small collection of React examples to get anyone started using React. They progress from simpler to more complex/full featured.
 
