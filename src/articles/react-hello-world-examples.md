@@ -12,11 +12,10 @@ and then your React code.
 
 In production, you'll want to not use the JSXTransformer
 and should instead look at using something like Gulp, Grunt or
-WebPack to compile JSX into JavaScript. Also, check out:
-http://facebook.github.io/react/docs/tooling-integration.html
+WebPack to compile JSX into JavaScript. Also, [check out the tooling docs](http://facebook.github.io/react/docs/tooling-integration.html).
 
-The `scripts.jsx` is where you link to your React code. Can be .js or .jsx 
-extension, doesn't really matter.
+
+The `scripts.jsx` is where you link to your React code. Can be `.js` or `.jsx` extension, doesn't really matter.
 
 ```html
 <!DOCTYPE HTML>
@@ -36,9 +35,9 @@ extension, doesn't really matter.
 
 ## The Basics
 
-The simplist React component ever.
+The simplest React component ever.
 
-It just renders an H1 tag into the body of the page. Since
+It just renders an `<h1>` tag into the body of the page. Since
 JSX is basically just HTML, you can use any valid tag you want.
 
 ```javascript
