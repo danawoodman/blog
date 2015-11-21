@@ -2,7 +2,8 @@
  * BASE STYLES
  --------------------------------------------------*/
 body {
-  font-family: 'Open Sans', Helvetica, sans-serif;
+  color: #222;
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: 300;
   margin: 0;
   padding: 0;
@@ -10,7 +11,9 @@ body {
 }
 
 h1, h2, h3 {
+  font-family: 'Crete Round', serif;
   font-weight: 800;
+  line-height: 1.2;
 }
 
 h2 {
@@ -18,18 +21,18 @@ h2 {
 }
 
 a {
-  color: #06b9d8;
-}
-
-a:hover {
-  color: #00dafc;
+  color: #4a90e2;
   text-decoration: none;
 }
+  a:hover {
+    color: black;
+    text-decoration: underline;
+  }
 
 li,
 p,
 pre {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   margin: 0 0 1.6rem 0;
 }
@@ -49,9 +52,8 @@ code {
 
 .hljs {
   background: #fafafa;
-  border-left: 0.5rem solid #06b9d8;
   font-size: 0.85rem;
-  padding: 1rem 0 1rem 2rem;
+  padding: 1.5rem 1.5rem 0 2rem;
 }
 
 
@@ -60,8 +62,9 @@ code {
  --------------------------------------------------*/
 
 .container {
+  clear: both;
   margin: 0 auto;
-  max-width: 50rem;
+  max-width: 55rem;
   padding: 0 1.5rem;
   text-align: left;
 }
@@ -72,34 +75,21 @@ code {
  --------------------------------------------------*/
 
 .page-header {
-  background: #06b9d8;
+  background: #111;
   margin: 0 0 6rem 0;
-  padding: 6rem 0;
+  padding: 2rem 0;
 }
 
-.page-header > .container {
-  text-align: center;
-}
-
-.page-avatar {
-  margin: 0 0 1rem 0;
-  padding: 0;
-  text-align: center;
-}
-
-.page-heading {
-  color: #fff;
-  font-size: 3rem;
+.brand {
+  font-size: 2rem;
+  line-height: 1;
   margin: 0;
   text-transform: uppercase;
 }
-
-.page-subheading {
-  color: #fff;
-  font-size: 1.25rem;
-  margin: 0.75rem 0 0 0;
-  padding: 0;
-}
+  .brand a {
+    color: #fff;
+    text-decoration: none;
+  }
 
 
 /*---------------------------------------------------
@@ -108,22 +98,12 @@ code {
 
 .page-footer {
   background: #fafafa;
-  margin-top: 6rem;
   padding: 6rem 0;
 }
-
-.page-footer-heading {
-  margin-top: 0;
-}
-
-
-/*---------------------------------------------------
- * AVATAR
- --------------------------------------------------*/
-
-.avatar {
-  border-radius: 50%;
-}
+  .page-footer p {
+    margin: 0;
+    text-align: center;
+  }
 
 
 /*---------------------------------------------------
@@ -131,33 +111,14 @@ code {
  --------------------------------------------------*/
 
 .article-list,
-.article-item {
+.article-list-item {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.article-list {
-  margin: 2rem 0;
-}
-
-.article-item {
-  border-bottom: 1px solid #f1f1f1;
-  line-height: 1.3;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-}
-
-.article-item-link {
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.article-item-date {
-  color: #888;
-  font-size: 1rem;
+.article-list-item {
+  padding-bottom: 2rem;
 }
 
 
@@ -165,79 +126,36 @@ code {
  * ARTICLE DETAIL
  --------------------------------------------------*/
 
-.article {}
+.article {
+  margin: 6rem 0;
+}
 
 .article-header {
-  background: #06b9d8;
-  margin: 0 0 4rem 0;
-  padding: 4rem 0;
 }
 
-.article-header > .container {
-  text-align: center;
+.article-meta {
+  color: #ccc;
+  margin-bottom: 2rem;
 }
+  .article-meta a {
+    color: #888;
+  }
+  .article-author {
+    font-style: normal;
+    display: inline;
+  }
 
-.article-date {
-  color: #fff;
-}
-
-.article-reading-time {
-  color: #aaa;
-  font-size: 0.85rem;
-  font-style: italic;
-}
-
-.article-author {
-  color: #fff;
-  font-style: normal;
-}
-
-.article-author a {
-  color: #fff;
-}
-
-.article-heading {
-  color: #fff;
+.article-title {
   font-size: 3rem;
-  margin: 0;
-  text-transform: uppercase;
+  margin: 0 0 2rem 0;
 }
+  .article-title a {
+    color: black;
+    text-decoration: none;
+  }
 
 .article-content {}
 
-
-/*---------------------------------------------------
- * ARTICLE NAVIGATION
- --------------------------------------------------*/
-
-.article-history {
-  margin: 3rem 0;
-  padding-top: 3rem;
-  text-align: center;
-}
-
-.article-history-prev,
-.article-history-next {
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 0.5rem 2rem;
-  text-decoration: none;
-}
-
-
-/*---------------------------------------------------
- * TAGS
- --------------------------------------------------*/
-.tag-list {
-  float: right;
-}
-
-.tag {
-  background: #f1f1f1;
-  border-radius: 3px;
-  color: #aaa;
-  font-style: italic;
-  font-size: 0.9rem;
-  margin: 0 0.25rem;
-  padding: 0.1rem 0.5rem;
+.read-more {
+  margin-bottom: 6rem;
 }

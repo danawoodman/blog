@@ -1,20 +1,13 @@
 {{> header }}
 
-<header class='page-header'>
-  <div class='container'>
-    {{> avatar}}
-    <h1 class='page-heading'>Dana Woodman</h1>
-    <p class='page-subheading'>A little place I like to call home...</p>
-  </div>
-</header>
-
 <div class='container'>
-  <h2>Latest Articles</h2>
-  {{> latest-articles }}
-
-  <h2>Latest Projects</h2>
-  {{> latest-projects }}
-
+  <ul class='article-list'>
+    {{#each collections.articles}}
+      <li class='article-list-item'>
+        {{> article}}
+      </li>
+    {{/each}}
+  </ul>
 </div>
 
 {{> footer }}
