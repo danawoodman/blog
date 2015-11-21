@@ -101,7 +101,7 @@ if (program.watch) {
   }))
 }
 
-ms.build(err => {
+ms.build(function (err) {
   if (err) {
     throw err
   }
