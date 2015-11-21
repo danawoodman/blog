@@ -84,7 +84,7 @@ ms.use(layouts({
 // Handle watching for changes
 if (program.watch) {
   console.log(chalk.green('Watching for changes...'))
-  ms.use(serve())
+  ms.use(serve({}))
   ms.use(
     watch({
       paths: {
