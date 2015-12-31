@@ -46,6 +46,13 @@ ms.use(static({
 
 // Markdown pipeline
 ms.use(drafts())
+ms.use(collections({
+  articles: {
+    pattern: 'articles/**/*.md',
+    sortBy: 'date',
+    reverse: true,
+  },
+}))
 ms.use(dateFormatter({
   dates: [
     {
@@ -53,13 +60,6 @@ ms.use(dateFormatter({
       format: 'LL',
     },
   ],
-}))
-ms.use(collections({
-  articles: {
-    pattern: 'articles/**/*.md',
-    sortBy: 'date',
-    reverse: true,
-  },
 }))
 ms.use(inPlace({
   engine: 'handlebars',
