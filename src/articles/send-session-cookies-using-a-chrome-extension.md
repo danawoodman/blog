@@ -1,6 +1,6 @@
 ---
 title: Send session cookies using a Chrome extension
-date: 2015-12-31
+date: 2015-12-30
 tags: [javascript,express,node,chrome-extension]
 ---
 
