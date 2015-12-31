@@ -7,16 +7,12 @@ Below are a small collection of React examples to get anyone started using React
 
 ## First Step
 
-Assuming you install React with Bower, you include React,
-then the JSXTransformer which turns JSX into JavaScript 
-and then your React code.
+To start using React, first include React then the JSXTransformer which turns JSX into JavaScript and then your React code.
 
-In production, you'll want to not use the JSXTransformer
-and should instead look at using something like Gulp, Grunt or
-WebPack to compile JSX into JavaScript. Also, [check out the tooling docs](http://facebook.github.io/react/docs/tooling-integration.html).
+In production, you should not use the JSXTransformer and should instead look at using something like Gulp, Grunt or WebPack to compile JSX into JavaScript. Also, [check out the tooling docs](http://facebook.github.io/react/docs/tooling-integration.html).
 
 
-The `scripts.jsx` is where you link to your React code. Can be `.js` or `.jsx` extension, doesn't really matter.
+The `scripts.js` is where you link to your React code. Can be `.js` or `.jsx` extension, doesn't really matter.
 
 ```html
 <!DOCTYPE HTML>
@@ -28,7 +24,7 @@ The `scripts.jsx` is where you link to your React code. Can be `.js` or `.jsx` e
   <body>
     <script src="http://fb.me/react-0.12.2.min.js"></script>
     <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
-    <script src="scripts.jsx" type="text/jsx"></script>
+    <script src="scripts.js" type="text/jsx"></script>
   </body>
 </html>
 ```
