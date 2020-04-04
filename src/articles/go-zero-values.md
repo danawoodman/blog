@@ -3,11 +3,12 @@ title: Use zero values to your advantage in go
 date: 2014-02-11
 tags: [go]
 ---
-In Go, when a value is initialized *without a initializer value it returns the "zero value" of that type*.
+
+In Go, when a value is initialized _without a initializer value it returns the "zero value" of that type_.
 
 In our contrived example below, when we initialize the `User` struct without an initialization value, we get the zero value of the struct. So when we get the `Admin` value, it returns the zero value for a boolean, which is `false`:
 
-```go
+```golang
 package main
 
 import "fmt"
@@ -23,9 +24,9 @@ func main() {
 }
 ```
 
-We didn't explicity set `Admin` to `false`; *Go did that for us*. 
+We didn't explicity set `Admin` to `false`; _Go did that for us_.
 
-The following zero values are created for their respective types: 
+The following zero values are created for their respective types:
 
 - bool: `false`
 - string: `""`

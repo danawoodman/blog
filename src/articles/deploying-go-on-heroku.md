@@ -2,7 +2,9 @@
 title: Deploying a go application on Heroku
 date: 2013-12-09
 tags: [golang, deployment]
+draft: true
 ---
+
 <iframe src="http://player.vimeo.com/video/93459202" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 View the [source code for this video on Github](https://github.com/sourcetank/1-deploying-go-on-heroku)

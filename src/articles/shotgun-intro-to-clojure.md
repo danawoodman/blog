@@ -11,8 +11,6 @@ Create a new clojure app with `lein new app my-app` where the first argument is 
 
 Running any `lein` command will automatically update your dependencies which means you don't need to remember to run Bundle after one of you collaborators updates a dependency.
 
-Functions *must have arguments*.
-
+Functions _must have arguments_.
 
 https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md
-

@@ -2,48 +2,5 @@
   "metadata": {
     "title": "Dana Woodman",
     "description": "Thoughts on code"
-  },
-  "plugins": {
-    "metalsmith-drafts": true,
-    "metalsmith-clean-css": {
-      "files": "src/**/*.css"
-    },
-    "metalsmith-static": {
-      "src": "public",
-      "dest": "."
-    },
-    "metalsmith-collections": {
-      "articles": {
-        "pattern": "articles/**/*.md",
-        "sortBy": "date",
-        "reverse": true
-      },
-      "projects": {
-        "pattern": "projects/**/*.md",
-        "sortBy": "date",
-        "reverse": true
-      }
-    },
-    "metalsmith-date-formatter": {
-      "dates": [
-        {
-          "key": "date",
-          "format": "LL"
-        }
-      ]
-    },
-    "metalsmith-markdown": {
-      "smartypants": true,
-      "gfm": true,
-      "tables": true
-    },
-    "metalsmith-permalinks": true,
-    "./lib/url.js": true,
-    "metalsmith-layouts": {
-      "default": "default.html",
-      "engine": "handlebars",
-      "partials": "partials",
-      "pattern": "**/*.html"
-    }
   }
 }

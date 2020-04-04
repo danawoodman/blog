@@ -2,7 +2,9 @@
 title: React "Hello World" Examples
 date: 2015-3-10
 tags: [javascript, react]
+draft: true
 ---
+
 Below are a small collection of React examples to get anyone started using React. They progress from simpler to more complex/full featured.
 
 ## First Step
@@ -11,14 +13,13 @@ To start using React, first include React then the JSXTransformer which turns JS
 
 In production, you should not use the JSXTransformer and should instead look at using something like Gulp, Grunt or WebPack to compile JSX into JavaScript. Also, [check out the tooling docs](http://facebook.github.io/react/docs/tooling-integration.html).
 
-
 The `scripts.js` is where you link to your React code. Can be `.js` or `.jsx` extension, doesn't really matter.
 
 ```html
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>React Hello World</title>
   </head>
   <body>
@@ -29,7 +30,6 @@ The `scripts.js` is where you link to your React code. Can be `.js` or `.jsx` ex
 </html>
 ```
 
-
 ## The Basics
 
 The simplest React component ever.
@@ -38,15 +38,14 @@ It just renders an `<h1>` tag into the body of the page. Since
 JSX is basically just HTML, you can use any valid tag you want.
 
 ```javascript
-React.render(<h1>Hello World</h1>, document.body);
+React.render(<h1>Hello World</h1>, document.body)
 ```
-
 
 ## Creating a component
 
 The most simple component has a `render` method that returns some
-JSX. `props` are attributes that are passed into the component 
-when you instantiate it. 
+JSX. `props` are attributes that are passed into the component
+when you instantiate it.
 
 One caveat is that `render` must return a single parent element;
 you can't return multiple adjacent JSX tags but must wrap them
@@ -55,20 +54,19 @@ in one parent element.
 ```javascript
 var HelloMessage = React.createClass({
   render: function () {
-    return <h1>Hello {this.props.message}!</h1>;
-  }
-});
+    return <h1>Hello {this.props.message}!</h1>
+  },
+})
 
-React.render(<HelloMessage message="World" />, document.body);
+React.render(<HelloMessage message="World" />, document.body)
 ```
-
 
 ## Managing State
 
 Sets the intial state of the component and then,
 when a link is clicked, updates the state.
 
-When the state updates, the component intelligently 
+When the state updates, the component intelligently
 and efficiently re-renders.
 
 Note that the `onClick` is the same as the JavaScript
@@ -80,40 +78,41 @@ http://facebook.github.io/react/docs/events.html
 var ToggleText = React.createClass({
   getInitialState: function () {
     return {
-      showDefault: true
+      showDefault: true,
     }
   },
-  
+
   toggle: function (e) {
     // Prevent following the link.
-    e.preventDefault();
-    
+    e.preventDefault()
+
     // Invert the chosen default.
     // This will trigger an intelligent re-render of the component.
     this.setState({ showDefault: !this.state.showDefault })
   },
-  
+
   render: function () {
     // Default to the default message.
-    var message = this.props.default;
-    
+    var message = this.props.default
+
     // If toggled, show the alternate message.
     if (!this.state.showDefault) {
-      message = this.props.alt;
+      message = this.props.alt
     }
-    
+
     return (
       <div>
         <h1>Hello {message}!</h1>
-        <a href="" onClick={this.toggle}>Toggle</a>
+        <a href="" onClick={this.toggle}>
+          Toggle
+        </a>
       </div>
-    );
-  }
-});
+    )
+  },
+})
 
-React.render(<ToggleText default="World" alt="Mars" />, document.body);
+React.render(<ToggleText default="World" alt="Mars" />, document.body)
 ```
-
 
 ## Combining components together
 
@@ -123,10 +122,10 @@ just like you would any HTML tag. You pass down data
 to your components from parent components in a one-way
 data flow.
 
-*Note: If you use something like Flux/Reflux you have a bit
+_Note: If you use something like Flux/Reflux you have a bit
 more power when it comes to data storage and event handling.
 Using a Flux-like framework with React is very helpful but beyond
-the scope of this article.*
+the scope of this article._
 
 ```javascript
 var ProductItem = React.createClass({
@@ -151,7 +150,7 @@ var ProductsList = React.createClass({
         />;
       );
     });
-    
+
     return (
       <table>
         {products}
@@ -169,7 +168,6 @@ var products = [
 
 React.render(<ProductList products={products} />, document.body);
 ```
-
 
 ## Whole Shebang
 
@@ -189,7 +187,7 @@ http://facebook.github.io/react/docs/component-specs.html
 ```javascript
 /*
 Mixins are just objects with properties that are merged with the compoent
-they are included in. 
+they are included in.
 
 See: http://facebook.github.io/react/docs/reusable-components.html#mixins
 */
@@ -197,8 +195,8 @@ var MyMixin = {
   queryAPIorSomething: function (url, options, successCallback) {
     // Do some API magic here...
   },
-  
-  // This does not overwrite the components 
+
+  // This does not overwrite the components
   // `componentWillUnmount` method but will
   // be called along side it.
   componetWillUnmount: function () {
@@ -209,72 +207,72 @@ var MyMixin = {
 
 var WholeShebang = React.createClass({
   mixins: [MyMixin],
-  
+
   propTypes: {
-    // This will log a message on the console if 
+    // This will log a message on the console if
     // items is not defined or if the wrong type
     // is supplied.
     items: React.PropTypes.array.isRequired
-    
+
     // This will only log if the type is wrong.
     prefix: React.PropTypes.string
   },
-  
+
   // Sane defaults for your component...
   getDefaultProps: function () {
     return {
       prefix: 'Hello'
     }
   },
-  
+
   componentWillMount: function () {
     // Here you could setState, fetch data from a server or something else...
     this.queryAPIorSomething('path/to/api.json', {} , function (data) {
       this.setState({ data: data });
     }.bind(this));
   },
-  
+
   componentDidMount: function () {
     // You now have access to the DOM:
     console.log(this.getDOMNode().html);
-    
+
     // ... or to component references:
     console.log(this.refs.foobar.getDOMNode().html);
   },
-  
+
   componentWillUpdate: function () {
     console.log('component about to update!');
   },
-  
+
   componentDidUpdate: function () {
     console.log('component updated!');
     // DOM is available here...
   },
-  
+
   componentWillUnmount: function () {
     // Use this to tear down any event listeners
     // or do other cleanup before the compoennt is
     // destroyed.
     console.log('component will unmount!');
   },
-  
+
   shouldComponentUpdate: function () {
-    // This is called when state/props changed and is 
+    // This is called when state/props changed and is
     // an opportunity where you can return false if
     // you don't want the component to update for
     // some reason.
     return true;
   },
-  
+
   toggle: function (e) {
     // Prevent following the link.
     e.preventDefault();
-    
+
     // Invert the chosen default.
     // This will trigger an intelligent re-render of the component.
     this.setState({ showDefault: !this.state.showDefault })
   },
-  
+
   render: function () {
     var items = _.map(this.props.items, function (item, index) {
       // Any time you construct a list of elements or components,
@@ -282,7 +280,7 @@ var WholeShebang = React.createClass({
       // with the DOM.
       return <li key={index}>{item}</li>;
     });
-    
+
     return (
       <div>
         <span ref="foobar">Show default: {this.state.showDefault}</span>

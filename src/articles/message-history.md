@@ -1,7 +1,7 @@
 ---
 title: Learn from your iMessage history on the Mac
 date: 2017-05-31
-tags: [sql,osx]
+tags: [sql, osx]
 ---
 
 Did you know you can access your iMessage history on the Mac and that it is a SQLite DB?
@@ -9,7 +9,7 @@ Did you know you can access your iMessage history on the Mac and that it is a SQ
 Go to `~/Library/Messages/chat.db` and open it in a SQL browser like the open-source [DB Browser for SQLite](http://sqlitebrowser.org/). Now you can run queries on the db, like for example:
 
 ```sql
-SELECT 
+SELECT
   SUM(
     LENGTH(text) -
     LENGTH(REPLACE(text, '👍', ''))

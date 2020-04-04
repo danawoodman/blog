@@ -2,14 +2,15 @@
 
 const chalk = require('chalk')
 const path = require('path')
+const discoverPartials = require('metalsmith-discover-partials')
 const program = require('commander')
 const metalsmith = require('metalsmith')
 const drafts = require('metalsmith-drafts')
-const cleanCSS = require('metalsmith-clean-css')
+// const cleanCSS = require('metalsmith-clean-css')
 const typography = require('metalsmith-typography')
 const static = require('metalsmith-static')
 const collections = require('metalsmith-collections')
-const branch = require('metalsmith-branch')
+// const branch = require('metalsmith-branch')
 const inPlace = require('metalsmith-in-place')
 const dateFormatter = require('metalsmith-date-formatter')
 const markdown = require('metalsmith-markdown')
@@ -28,58 +29,41 @@ program
 
 const ms = metalsmith(path.join(__dirname, '..'))
 
-//ms.use(function(files, metalsmith, done){
-  //setImmediate(done);
-  //Object.keys(files).forEach(function(file){
-    //var data = files[file];
-    //if (data.layout) {
-      //console.log(data.layout)
-    //}
-  //});
-//})
-
 // Assets
-ms.use(static({
-  dest: '.',
-  src: 'public',
-}))
+ms.use(
+  static({
+    dest: '.',
+    src: 'public',
+  })
+)
 
 // Markdown pipeline
 ms.use(drafts())
-ms.use(collections({
-  articles: {
-    pattern: 'articles/**/*.md',
-    sortBy: 'date',
-    reverse: true,
-  },
-}))
-ms.use(dateFormatter({
-  dates: [
-    {
-      key: 'date',
-      format: 'LL',
+ms.use(
+  typography({
+    lang: 'en',
+  })
+)
+ms.use(
+  collections({
+    articles: {
+      pattern: 'articles/**/*.md',
+      sortBy: 'date',
+      reverse: true,
     },
-  ],
-}))
-ms.use(inPlace({
-  engine: 'handlebars',
-  partials: 'partials',
-}))
-ms.use(markdown({
-  gfm: true,
-  smartypants: true,
-  tables: true,
-}))
+  })
+)
+ms.use(
+  markdown({
+    gfm: true,
+    smartypants: true,
+    tables: true,
+  })
+)
+ms.use(dateFormatter())
 ms.use(permalinks())
-ms.use(typography({
-  lang: 'en',
-}))
-ms.use(layouts({
-  default: 'article.html',
-  engine: 'handlebars',
-  partials: 'partials',
-}))
-
+ms.use(discoverPartials())
+ms.use(layouts({ default: 'default.hbs' }))
 
 // Handle watching for changes
 if (program.watch) {
@@ -96,14 +80,14 @@ if (program.watch) {
       livereload: true,
     })
   )
-  ms.use(define({
-    development: true,
-  }))
+  ms.use(
+    define({
+      development: true,
+    })
+  )
 }
 
 ms.build(function (err) {
-  if (err) {
-    throw err
-  }
+  if (err) throw err
   console.log(chalk.green('Build finished'))
 })

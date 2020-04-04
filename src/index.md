@@ -1,5 +1,4 @@
 ---
 title: Code, Coffee and Community
-layout: index.html
+layout: index.hbs
 ---
-

@@ -2,6 +2,7 @@
 title: Implementing splat args in JavaScript
 date: 2014-03-24
 tags: [javascript]
+draft: true
 ---
 
 Typically in JavaScript you'll define the arguments you expect in a function like so:
@@ -19,12 +20,12 @@ Well, JavaScript provides a special property called `arguments` that is scoped t
 ```js
 function sayHello(message, recipient) {
   // args is an array of arguments passed into the function.
-  var args = Array.prototype.slice.call(arguments, sayHello.length);
+  var args = Array.prototype.slice.call(arguments, sayHello.length)
   // Do something exciting here...
 }
 
 // Now you can call sayHello with any number of arguments:
-sayHello('Hello there!', 'John Smith', some, extra, args);
+sayHello('Hello there!', 'John Smith', some, extra, args)
 ```
 
 This short line takes the arguments list and calls `Array.slice` to get all the extra arguments beyond the position arguments.
@@ -43,4 +44,3 @@ function sayHello(message, recipient, ...args) {
 ```
 
 Or, as my friend [Alex](https://github.com/squeegy) points out, you can always use [CoffeeScript](http://coffeescript.org/).
-

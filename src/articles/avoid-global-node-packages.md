@@ -2,6 +2,7 @@
 title: Avoid global Node.js packages
 date: 2015-02-13
 tags: [node, javascript, tooling]
+draft: true
 ---
 
 Often in Node.js projects, we're required to install global modules to run things like tests, migrations and other development processes.
@@ -31,4 +32,4 @@ For example, if we wanted to run a [Sequelize](http://sequelizejs.com/) migratio
 
 Now you can run `npm run migrate` to run migrations but without the need for global NPM packages but with the same convenience.
 
-*Extra credit: You can also pass additional parameters to npm scripts by using a double dash (`--`), eg `npm run test -- --watch`*
+_Extra credit: You can also pass additional parameters to npm scripts by using a double dash (`--`), eg `npm run test -- --watch`_

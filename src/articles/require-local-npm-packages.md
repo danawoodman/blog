@@ -2,7 +2,9 @@
 title: Require local NPM packages in Node.js
 date: 2015-02-08
 tags: [node, javascript]
+draft: true
 ---
+
 NPM after version 2.0 has added the ability for developers to install local packages into their projects easily.
 
 You would want to use a local package for a few reasons, but most commonly is when you're developing a module and you want to test it out locally.
@@ -40,9 +42,9 @@ npm i --save ./submodule/
 Now you can use your submodule in your main application like it was downloaded from NPM and in your `node_modules` directory:
 
 ```js
-var sub = require('submodule');
+var sub = require('submodule')
 
-console.log(sub('some params'));
+console.log(sub('some params'))
 ```
 
 You can install local modules in a variety of other ways:
