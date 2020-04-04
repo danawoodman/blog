@@ -83,12 +83,21 @@ code.hljs {
 }
 
 .brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-size: 1.5rem;
   line-height: 1;
   margin: 0;
   text-transform: uppercase;
   text-align: center;
 }
+.brand .avatar {
+  margin-bottom: 2rem;
+  border-radius: 50%;
+}
+
 .brand a {
   color: #aaa;
   text-decoration: none;
