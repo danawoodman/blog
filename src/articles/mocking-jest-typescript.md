@@ -8,7 +8,7 @@ Use the `ts-jest/utils` `mocked` function to assist in testing:
 
 ```ts
 import { mocked } from 'ts-jest/utils'
-import someLib, { SomeReturnType } from 'some-lib
+import someLib, { SomeReturnType } from 'some-lib'
 
 // Mock the library
 jest.mock('some-library')
