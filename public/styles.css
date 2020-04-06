@@ -1,9 +1,27 @@
+:root {
+  /* Colors */
+  --color-gray-darkest: #1d1f21;
+  --color-gray-darker: #3d3d3d;
+  --color-gray: #aaa;
+  --color-gray-light: #ccc;
+  --color-gray-lightest: #eee;
+  --color-secondary: #ffad3b;
+  --color-primary-light: #ffdbde;
+  --color-primary: #ff3b62;
+  --color-primary-dark: #91102a;
+
+  /* Font families */
+  --font-family-sans-serif: 'Work Sans', sans-serif;
+  --font-family-serif: 'Zilla Slab', serif;
+}
+
 /*---------------------------------------------------
  * BASE STYLES
  --------------------------------------------------*/
+
 body {
-  color: #222;
-  font-family: 'Work Sans', sans-serif;
+  color: var(--color-gray-darkest);
+  font-family: var(--font-family-sans-serif);
   font-weight: 300;
   font-size: 16px;
   margin: 0;
@@ -14,7 +32,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'Zilla Slab', serif;
+  font-family: var(--font-family-serif);
   font-weight: 300;
   line-height: 1.2;
 }
@@ -25,11 +43,12 @@ h2 {
 }
 
 a {
-  color: #4a90e2;
+  color: var(--color-primary);
+  font-weight: bold;
   text-decoration: none;
 }
 a:hover {
-  color: black;
+  color: var(--color-primary-dark);
   text-decoration: underline;
 }
 
@@ -45,19 +64,14 @@ li {
   margin: 0 0 1rem 0;
 }
 
-p {
-  color: #333;
-}
-
 code {
-  color: #000080;
-  background: #fafafa;
+  color: var(--color-secondary);
   font-family: 'PT Mono', monospace;
 }
 
 code.hljs {
   font-size: 0.9rem;
-  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  padding: 2rem;
 }
 
 /*---------------------------------------------------
@@ -108,7 +122,6 @@ code.hljs {
  --------------------------------------------------*/
 
 .page-footer {
-  background: #fafafa;
   padding: 6rem 0;
 }
 .page-footer p {
@@ -163,9 +176,32 @@ code.hljs {
   text-decoration: none;
 }
 
-.article-content {
-}
-
 .read-more {
   margin-bottom: 6rem;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background: var(--color-gray-darker);
+    color: var(--color-gray-lightest);
+  }
+
+  code {
+    color: var(--color-secondary);
+  }
+
+  .article-title a:hover,
+  a:hover {
+    color: var(--color-primary-light);
+  }
+
+  .brand a {
+    color: var(--color-gray-lightest);
+  }
+
+  .article-title a {
+    color: var(--color-gray-lightest);
+  }
 }
