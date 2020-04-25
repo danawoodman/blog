@@ -3,9 +3,16 @@
 <div class='container'>
   <ul class='article-list'>
     {{#each collections.articles}}
-      <li class='article-list-item'>
-{{> article}}
-      </li>
+    <li class='article-list-item'>
+      <h3 class="article-list-item-heading">
+        <a href="{{path}}">{{title}}</a>
+      </h3>
+      <div class='article-list-item-tags'>
+        {{#each tags}}
+        <span class='article-list-item-tag'>{{.}}</span>
+        {{/each}}
+      </div>
+    </li>
     {{/each}}
   </ul>
 </div>

@@ -2,8 +2,10 @@
   /* Colors */
   --color-gray-darkest: #1d1f21;
   --color-gray-darker: #3d3d3d;
+  --color-gray-dark: #777;
   --color-gray: #aaa;
   --color-gray-light: #ccc;
+  --color-gray-lighter: #ddd;
   --color-gray-lightest: #eee;
   --color-secondary: #ffad3b;
   --color-primary-light: #ffdbde;
@@ -23,7 +25,7 @@ body {
   color: var(--color-gray-darkest);
   font-family: var(--font-family-sans-serif);
   font-weight: 300;
-  font-size: 16px;
+  font-size: 16px !important;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -55,9 +57,9 @@ a:hover {
 li,
 p,
 pre {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin: 0 0 1.6rem 0;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 0 0 1.8rem 0 !important;
 }
 
 li {
@@ -69,9 +71,11 @@ code {
   font-family: 'PT Mono', monospace;
 }
 
-code.hljs {
-  font-size: 0.9rem;
-  padding: 2rem;
+pre,
+pre[class*='language-'] {
+  font-size: 1rem !important;
+  padding: 2rem !important;
+  border-radius: 0.3rem;
 }
 
 /*---------------------------------------------------
@@ -141,7 +145,27 @@ code.hljs {
 }
 
 .article-list-item {
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+.article-list-item-heading {
+  font-size: 1.8rem;
+  margin: 0;
+}
+.article-list-item-heading a {
+  color: var(--color-gray-darkest);
+}
+.article-list-item-tags {
+  margin: 0.3rem 0 0;
+}
+.article-list-item-tag {
+  background: var(--color-gray-lightest);
+  color: var(--color-gray-dark);
+  border-radius: 0.2rem;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.5rem;
+  margin-right: 0.4rem;
+  text-transform: uppercase;
 }
 
 /*---------------------------------------------------
@@ -198,6 +222,13 @@ code.hljs {
   .article-title a:hover,
   a:hover {
     color: var(--color-primary-light);
+  }
+  .article-list-item-heading a {
+    color: var(--color-gray-lightest);
+  }
+  .article-list-item-tag {
+    background: var(--color-gray-darkest);
+    color: var(--color-gray);
   }
 
   .brand a {
