@@ -6,7 +6,7 @@ tags: [go]
 
 The `for` loop in Go is incredibly robust and fun to use. Here are a few examples of how to use `for` loops for various use cases:
 
-```golang
+```go
 # Infinite loop:
 for {
     # Do stuff forever...

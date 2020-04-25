@@ -8,7 +8,7 @@ In Go, when a value is initialized _without a initializer value it returns the "
 
 In our contrived example below, when we initialize the `User` struct without an initialization value, we get the zero value of the struct. So when we get the `Admin` value, it returns the zero value for a boolean, which is `false`:
 
-```golang
+```go
 package main
 
 import "fmt"
