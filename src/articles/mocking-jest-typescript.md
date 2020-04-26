@@ -6,7 +6,7 @@ tags: [jest, typescript, javascript, testing]
 
 Use the `ts-jest/utils` `mocked` function to assist in testing:
 
-```ts
+```typescript
 import { mocked } from 'ts-jest/utils'
 import someLib, { SomeReturnType } from 'some-lib'
 

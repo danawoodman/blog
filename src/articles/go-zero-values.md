@@ -20,7 +20,7 @@ type User struct {
 
 func main() {
     u := User{}
-    fmt.Println(u.Admin) #=> false
+    fmt.Println(u.Admin) //=> false
 }
 ```
 
