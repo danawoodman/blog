@@ -66,7 +66,12 @@ ms.use(permalinks())
 ms.use(discoverPartials())
 ms.use(layouts({ default: 'default.hbs' }))
 ms.use(markdown({ langPrefix: 'language-' }))
-ms.use(metalsmithPrism())
+ms.use(
+  metalsmithPrism({
+    decode: true,
+    preLoad: ['typescript', 'javascript', 'jsx', 'go'],
+  })
+)
 
 // Handle watching for changes
 if (program.watch) {
