@@ -3,6 +3,11 @@
     <h1><a href="/{{ path }}">{{ title }}</a></h1>
     <aside>
       <time>{{ date }}</time>
+      <div class='tags'>
+        {{#each tags}}
+        <span class='tag'>{{.}}</span>
+        {{/each}}
+      </div>
     </aside>
   </header>
   <section>

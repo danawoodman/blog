@@ -157,6 +157,9 @@ pre[class*='language-'] {
   border-radius: 0.25rem;
   margin: 2.5rem 0 !important;
 }
+pre code {
+  padding: 0;
+}
 
 /*---------------------------------------------------
  * CONTAINER
@@ -166,7 +169,7 @@ pre[class*='language-'] {
   clear: both;
   margin: 0 auto;
   max-width: var(--container-width);
-  padding: 0 3rem;
+  padding: 0 1.75rem;
   text-align: left;
 }
 
@@ -304,10 +307,12 @@ article header {
 
 article header aside {
   color: var(--timestamp-color);
+  display: flex;
+  align-items: center;
   margin-bottom: 2rem;
 }
-article header aside a {
-  color: #888;
+article header aside time {
+  margin-right: 2rem;
 }
 
 article img {
