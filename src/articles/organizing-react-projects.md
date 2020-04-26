@@ -6,7 +6,7 @@ tags: [react, javascript, typescript]
 
 _**Got no time?** Jump to the [tl;dr](#tldr)._
 
-React is an incredibly powerful tool in that you can use it any way you like. The side effect of this, however, is that **you must make a lot of decisions yourself** as to how to use it and how to structure your React applications.
+React is an incredibly powerful tool in part because you can use it any way you like. The side effect of this flexibility, however, is that **you must make a lot of decisions yourself** as to how to use it and how to structure your React applications.
 
 I've been working with React since 2014 and have written over 20 production applications in React and literally thousands of components. Through the years, I've tried nearly every convention under the sun but **I continually come back to the basics**. This short article will outline how I tend to go about structuring React applications and some rationale around these decisions. If my thinking evolves on this subject, I will attempt to keep this post updated to reflect my new thinking.
 
