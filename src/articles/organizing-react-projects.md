@@ -123,16 +123,29 @@ import { ComplexComponent, SomeHelperComponent } from './ComplexComponent'
 
 Since almost always I only want to export a single component from a component directory, I will not add this internal component to the `index.ts` file's exports.
 
+## Organizing non-React code
+
+Now, often your app will not be just React components, so you'll have to make some decisions about organizing other non-component parts of your app. In general, this will depend a lot on your type of project (is it GraphQL with Apollo? Redux? Just Context/Providers? Soomething else?), but here are some thoughts/suggestions:
+
+- Abstract your API queries outside of your components. I have had success with a `src/services` directory where I put API wrapper services in.
+- Use hooks: create a `src/hooks` directory and use hooks to do data accessing and other functionality (you could use them to wrap your API services, for example).
+- If you're using Redux, you could have a `src/reducers` and `src/actions` folders and a `src/store.ts` structure, that seems to work well.
+- Have global CSS? Try importing it in your main component (often `App.tsx`). If you have multiple entrypoints, then try `src/styles/global.css` or something of the sort.
+
 ## Using a generator
 
 Obviously having this much structure for every component means if you're doing this manually it can become a pain.
 
-So, to make this easier, I made a simple Yeoman generator to make components in this structure with a basic test file, Storybook story, etc.
+So, to make this easier, I made a simple Yeoman generator (_which I'll open-source shortly and update here_) to make components in this structure with a basic test file, Storybook story, etc.
 
-This makes it a one-command step to have a new component with tests, stories and start styles and component structure. An additional benefit is it helps new developers get started quickly without having to learn a lot about how components are made. The newly created components are basically self-documenting most structural conventions automatically.
+This makes it a one-command step to have a new component with tests, stories and starter styles and component structure.
+
+An additional benefit to having a generator is it helps new developers get started quickly without having to learn a lot about how components are made. The newly created components are basically self-documenting most structural conventions automatically.
 
 ## Conclusion
 
-Of course there are many ways to structure React applications and it will depend on the tools you're using (for example, Next.js and Gatsby have their own conventions).
+Thanks for those of you that made it this far! 🎉 I hope this post at least brought you some new ideas to entertain when organizing your current or next React project.
 
-That said, this has been working well on my team. Give it a shot in your own projects and let me know your thoughts!
+Of course there are many ways to structure React applications and it will depend on the tools you're using (for example, Next.js and Gatsby have their own conventions), but this approach has been working well on my team.
+
+Give it a shot in your own projects and let me know your thoughts!
