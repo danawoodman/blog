@@ -162,7 +162,7 @@ function Multiple() {
 
 ## Managing State
 
-Managing state in React applications is a complicated subject and there are many ways to accomplish it. In the example below, we are using [Hooks](https://reactjs.org/docs/hooks-intro.html) which are somewhat new feature of React and are quickly becoming the go-to tool in the React developer toolbox.
+Managing state in React applications is a complicated subject and there are many ways to accomplish it. In the example below, we are using [Hooks](https://reactjs.org/docs/hooks-intro.html) which is a somewhat new feature of React and is quickly becoming the go-to tool in the React developer toolbox.
 
 One important caveat with Hooks; you can only use them in `function`al components, not `Class` components.
 
