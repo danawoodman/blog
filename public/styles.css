@@ -14,7 +14,7 @@
 
   /* Defaults */
   --default-font-family: 'Work Sans', sans-serif;
-  --default-font-size: 1.2rem;
+  --default-font-size: 18px;
   --default-color: #333;
   --default-background: white;
 
@@ -29,6 +29,9 @@
   --code-background: #f7f6e9;
   --code-padding: 0.2rem 0.3rem;
 
+  /* Container */
+  --container-width: 50rem;
+
   /* Header/brand */
   --brand-link-color: #444;
   --brand-link-color-hover: #222;
@@ -36,8 +39,9 @@
   /* Headings */
   --heading-font-family: 'Fira Sans', sans-serif;
   --heading-link-color: black;
-  --h1-font-size: 2.9rem;
+  --h1-font-size: 2.7rem;
   --h1-margin: 0 0 2rem 0;
+  --h2-font-size: 2.1rem;
 
   /* Article */
   --timestamp-color: #999;
@@ -46,6 +50,7 @@
   --tag-color: #777;
   --tag-background: #eee;
 
+  /* Anchor links */
   --anchor-color: #ccc;
   --anchor-color-hover: var(--link-color);
 }
@@ -75,12 +80,14 @@
  * BASE STYLES
  --------------------------------------------------*/
 
+html {
+  font-size: var(--default-font-size);
+}
 body {
   color: var(--default-color);
   background-color: var(--default-background);
   font-family: var(--default-font-family);
   font-weight: 300;
-  font-size: 16px !important;
   margin: 0;
   padding: 0 0 6rem 0;
   text-align: center;
@@ -104,7 +111,7 @@ h1 {
   margin: var(--h1-margin);
 }
 h2 {
-  font-size: 2.2rem;
+  font-size: var(--h2-font-size);
   margin: 4rem 0 2.5rem;
   padding: 3rem 0 0 0;
 }
@@ -125,7 +132,7 @@ a:hover {
 li,
 p,
 pre {
-  font-size: var(--default-font-size);
+  font-size: 1rem;
   line-height: 1.8;
   margin: 0 0 1.8rem 0;
 }
@@ -157,7 +164,7 @@ pre[class*='language-'] {
 .container {
   clear: both;
   margin: 0 auto;
-  max-width: 55rem;
+  max-width: var(--container-width);
   padding: 0 3rem;
   text-align: left;
 }
