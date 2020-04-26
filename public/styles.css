@@ -28,6 +28,7 @@
   --code-color: black;
   --code-background: #f7f6e9;
   --code-padding: 0.2rem 0.3rem;
+  --pre-font-size: 0.9rem;
 
   /* Container */
   --container-width: 50rem;
@@ -61,8 +62,8 @@
     --default-color: #ccc;
     --default-background: #1d1f21;
 
-    --code-color: #aaa;
-    --code-background: #111;
+    --code-color: #ddd;
+    --code-background: #2b3f52;
 
     --brand-link-color: #aaa;
     --brand-link-color-hover: #eee;
@@ -151,7 +152,7 @@ code {
 
 pre,
 pre[class*='language-'] {
-  font-size: 1rem !important;
+  font-size: var(--pre-font-size) !important;
   padding: 2rem 2.25rem !important;
   border-radius: 0.25rem;
   margin: 2.5rem 0 !important;
