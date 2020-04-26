@@ -1,8 +1,10 @@
 ---
 title: How I Organize React Projects
 date: 2020-04-26
-tags: [react]
+tags: [react, javascript, typescript]
 ---
+
+_**Got no time?** Jump to the [tl;dr](#tldr)._
 
 React is an incredibly powerful tool in that you can use it any way you like. The side effect of this, however, is that **you must make a lot of decisions yourself** as to how to use it and how to structure your React applications.
 
