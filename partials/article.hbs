@@ -1,19 +1,11 @@
-<article class="article">
-  <header class="article-header">
-    <h1>
-      <a href="/{{ path }}">{{ title }}</a>
-    </h1>
-    <div class="article-meta">
+<article>
+  <header>
+    <h1><a href="/{{ path }}">{{ title }}</a></h1>
+    <aside>
       <time>{{ date }}</time>
-      <!--
-      <address class="article-author">
-        by <a rel="author" href="/">Dana Woodman</a>
-      </address>
-      -->
-    </div>
+    </aside>
   </header>
-
-  <section class="article-content">
-    {{{contents}}}
+  <section>
+{{{contents}}}
   </section>
 </article>

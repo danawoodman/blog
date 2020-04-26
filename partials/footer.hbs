@@ -41,8 +41,8 @@
 
   // A hacky way to give each heading an anchor link.
   try {
-    var h2s = Array.from(document.querySelectorAll('.article h2'))
-    var h3s = Array.from(document.querySelectorAll('.article h3'))
+    var h2s = Array.from(document.querySelectorAll('article section h2'))
+    var h3s = Array.from(document.querySelectorAll('article section h3'))
     var headings = [].concat(h2s, h3s)
     if (headings && headings.length) {
       headings.map(function (h) {

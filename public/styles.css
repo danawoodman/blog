@@ -294,27 +294,23 @@ pre[class*='language-'] {
  * ARTICLE DETAIL
  --------------------------------------------------*/
 
-.article {
+article {
   margin: 3rem 0;
 }
 
-.article-header {
+article header {
   margin-bottom: 4rem;
 }
 
-.article-meta {
+article header aside {
   color: var(--timestamp-color);
   margin-bottom: 2rem;
 }
-.article-meta a {
+article header aside a {
   color: #888;
 }
-.article-author {
-  font-style: normal;
-  display: inline;
-}
 
-.article img {
+article img {
   width: 100%;
 }
 
