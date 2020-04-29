@@ -1,10 +1,12 @@
 ---
-title: React "Hello World" Examples
+title: React "Hello World" examples
 date: 2020-04-25
 tags: [javascript, react]
 ---
 
 Below is a small collection of React examples to get anyone started using React. They progress from simpler to more complex/full featured examples.
+
+This article is intended specifically for people who are new to React. If you're a React veteran, you might want to skip sections you know or check out one of [my other posts](/articles) instead.
 
 ## First Step
 
@@ -51,7 +53,7 @@ React.render(<h1>Hello World!</h1>, document.getElementById('app'))
 
 ## Recommendations before you continue
 
-If you're new to React, I highly recommend you start by creating a new React application with create-react-app since it is the standard way to make Single Page Apps (SPAs) in React and gives you all the tools you need to get started.
+If you're new to React, I highly recommend you **start by creating a new React application with create-react-app** since it is the standard way to make Single Page Apps (SPAs) in React and gives you all the tools you need to get started.
 
 If you have a recent version of Node.js installed, you can run:
 
@@ -94,11 +96,18 @@ You will also come across another form of React components which is using an arr
 const HelloMessage = ({ message }) => <h1>Hello {message}!</h1>
 ```
 
-Using arrow functions can make your components a bit more compact if they are simple components. I personally prefer to use traditional `function`s since it is a) clearer to developers it is a function b) it uses almost the same amount of characters as a arrow function for any non-trivial components, and c) it is more familiar to new developers or developers not familiar with JavaScript.
+Using arrow functions can make your components a bit more compact if they are simple components. I personally prefer to use traditional `function`s for the following reasons:
+
+1. It is clearer to developers it is a function since the `function` keyword is more explicity than a `const` + arrow function, especially for people new to JS or new to ES6 arrow functions.
+2. It uses almost the same amount of characters as a arrow function (actually a few less) for any non-trivial components (one that has a block body and not an immediate return, that is):
+   ```typescript
+   function Hello() {}
+   const Hello = () => {}
+   ```
 
 Again, you can use whichever you prefer, at the end of the day they are effectively the same with some very minor differences.
 
-_Note: in future examples I will omit the imports of React and ReactDOM to keep examples simpler_
+_Note: In the following examples I will omit the imports of React and ReactDOM to keep examples simpler._
 
 ## Notes about props
 
@@ -107,6 +116,7 @@ Some important notes about props:
 - Use `className` if you want to pass in CSS classes: `className="container"` will translate to `class="container"` in your HTML.
 - Use `htmlFor` if you want to use the `for="some-input"` attribute for linking a `<label>` to a form input.
 - Use `style={{ maxWidth: '40rem' }}` to define styles, not as a string as you would normally in HTML. All keys are camelCased.
+- If you do not pass a value to a prop, it is treated as a boolean `true` value, e.g. `isAdmin` is the same as `isAdmin={true}` but more succinct.
 
 ## Different types of props
 
@@ -160,6 +170,8 @@ function Multiple() {
 }
 ```
 
+Generally speaking, using option 1 is preferred since then you don't need to construct your own keys for elements. However, you may find situations where option 2 makes sense for your application.
+
 ## Managing State
 
 Managing state in React applications is a complicated subject and there are many ways to accomplish it. In the example below, we are using [Hooks](https://reactjs.org/docs/hooks-intro.html) which is a somewhat new feature of React and is quickly becoming the go-to tool in the React developer toolbox.
@@ -170,7 +182,7 @@ This component sets the intial state of the component and then, when a button is
 
 ```js
 function ToggleText({ original, alternate }) {
-  // Default to the showing the "original" message.
+  // Default to showing the "original" message.
   const [showOriginal, setShowOriginal] = React.useState(true)
 
   // Toggle the "showOriginal" value every time this function is called.
@@ -196,6 +208,26 @@ React.render(
 Note that the `onClick` is practically the same as the JavaScript `onClick` event handler. There are many common browser events that are supported by React. See them all at: <https://reactjs.org/docs/events.html>
 
 We use a callabck function in the `setShowOriginal` function so we are guaranteed to get the right value for `val`. If we didn't do this, the value `val` could change since updating state in React components is _asynchronous_.
+
+## Rendering children in a component
+
+Often times, you will want to render some JSX _within_ another React component. Using `children`, this becomes easy:
+
+```js
+function Modal({ children }) {
+  return <div className="modal">{chidlren}</div>
+}
+
+function HelloModal() {
+  return (
+    <Modal>
+      <h1>Hello World!</h1>
+    </Modal>
+  )
+}
+```
+
+This renders the `<h1>` tag inside of the `<Modal>` component. This conceptually works exactly like HTML tags except that `children` is a "magic" prop that all React components have access to. This way you can render `children` anywhere in your component you want.
 
 ## Combining components together
 
@@ -236,27 +268,7 @@ React.render(
 )
 ```
 
-_Note: If you use something like Redux/Flux you have a bit more power when it comes to data storage and event handling. Using a Flux-like framework with React can be very helpful but beyond the scope of this article._
-
-## Rendering children in a component
-
-Often times, you will want to render some JSX _within_ another React component. Using `children`, this becomes easy:
-
-```js
-function Modal({ children }) {
-  return <div className="modal">{chidlren}</div>
-}
-
-function HelloModal() {
-  return (
-    <Modal>
-      <h1>Hello World!</h1>
-    </Modal>
-  )
-}
-```
-
-This renders the `<h1>` tag inside of the `<Modal>` component.
+_Note: If you use something like Redux/Context you have a bit more power when it comes to data storage and event handling, but is a bit beyond the scope of this article._
 
 ## Fetching data from an API
 
@@ -332,6 +344,25 @@ function Toggle() {
   )
 }
 ```
+
+If you instead don't need a fallback component, you can use a boolean comparison approach like so:
+
+```js
+function Toggle() {
+  const [on, setOn] = React.setState(false)
+
+  const toggle = () => setOn((v) => !v)
+
+  return (
+    <div>
+      {on && <h1>ON!</h1>}
+      <button onClick={toggle}>Toggle</button>
+    </div>
+  )
+}
+```
+
+This evaluates the expression `on` and if it is "truthy" then we render the `<h1>` tag otherwise we render nothing.
 
 ## Conclusion
 
