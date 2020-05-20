@@ -16,7 +16,7 @@ YMMV: In the end, there is no right choice and you should **pick what works best
 
 If you're an impatient type like me, here is the high level summary of what I tend to use in React applications, which boils down to the saying **KISS: keep it simple stupid**.
 
-- Use a flat `src/components` directory structure for all components (no `containers`/`pages`/`screens`/etc folders)
+- Use a flat `src/components` directory structure for all components. Limited or no use of `containers`/`pages`/`screens`/etc folders, except when absolutely necessary (like `pages` with Next.js).
 - One folder per component which matches the name of the component (e.g. `Button`)
 - An index file that exports a named export for the component.
 - The component files named the same as the component (e.g. `Button.tsx`)
@@ -30,6 +30,8 @@ Keep reading for the rationale that went into these decisions.
 ## Flat `components` directory
 
 I now prefer one flat structure for components even for things like "container components", "pages", and "scenes". In those cases, I just call the component something like `UserDetailPage` which makes it quite clear what the component represents without needing to make a decision as to where it needs to live.
+
+The primary exception to this rule is when using Next.js which requires a `pages` directory.
 
 Here is an example of how a directory following this convention could look like:
 
@@ -56,7 +58,7 @@ One flat tree makes finding and importing things easier and **reduces the amount
 
 I have found having separate folders just makes importing and finding things harder and also forces you to have to make a lot more decisions about where things should live which is often harder than it should be.
 
-In additon, a flat structure makes renaming and importing slightly easier because you don't have to deal with inconsistent relative import paths as you would if you had components in a more complicated directory structure.
+In additon, a flat structure makes renaming and importing slightly easier because you don't have to deal with inconsistent relative import paths as you would if you had components in a more complicated directory structure. Of course, you can get around this by using import mapping using something like `paths` in Typescript but this is not the default behavior of JavaScript projects and requires extra configuration and knowledge.
 
 For projects with hundreds of components, this structure may fall apart, but I would argue that developers tend to use search to find things more than scrolling down a directly list, so I think the productivity impact is limited.
 
@@ -87,6 +89,8 @@ import SomeObscureName from '../Button'
 ```
 
 Now renaming becomes a lot more difficult and makes code harder to understand because of possible confusing import names.
+
+Overall these are minor issues, but I find they add up over time.
 
 ## Internal components
 
@@ -123,6 +127,8 @@ import { ComplexComponent, SomeHelperComponent } from './ComplexComponent'
 
 Since almost always I only want to export a single component from a component directory, I will not add this internal component to the `index.ts` file's exports.
 
+If your component gets too complex however, that is a clear sign you need to rethink how you're structuring the component and may indicate you need to make more generic or reusable components instead.
+
 ## Organizing non-React code
 
 Now, often your app will not be just React components, so you'll have to make some decisions about organizing other non-component parts of your app. In general, this will depend a lot on your type of project (is it GraphQL with Apollo? Redux? Just Context/Providers? Soomething else?), but here are some thoughts/suggestions:
@@ -149,3 +155,5 @@ Thanks for those of you that made it this far! 🎉 I hope this post at least br
 Of course there are many ways to structure React applications and it will depend on the tools you're using (for example, Next.js and Gatsby have their own conventions), but this approach has been working well on my team.
 
 Give it a shot in your own projects and let me know your thoughts!
+
+Discussion on [HackerNews](https://news.ycombinator.com/item?id=22989060) and [Reddit](https://www.reddit.com/r/reactjs/comments/g8jlzs/how_i_organize_react_projects/?).
